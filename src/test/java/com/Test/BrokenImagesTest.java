@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class BrokenImagesTest {
+	
 
 	public static void main(String[] args) {
 
@@ -47,6 +48,9 @@ public class BrokenImagesTest {
 				e.printStackTrace();
 			}
 		}
+		
+		
+		
 
 		driver.quit();
 	}
