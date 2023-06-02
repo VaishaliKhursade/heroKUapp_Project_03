@@ -13,7 +13,11 @@ public class Base {
 	
 	public void validation(WebElement element) {
 		
-		org.testng.Assert.assertTrue(element.isDisplayed(),"Test failed, the contnt is not visible");
+		org.testng.Assert.assertTrue(element.isDisplayed(),"Test failed, the expected content is not visible");
+	}
+	
+	public void activeValidation(WebElement element) {
+		org.testng.Assert.assertTrue(element.isEnabled(),"Test failed, the "+ element+" is not enabled");
 	}
 	
 	

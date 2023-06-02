@@ -9,23 +9,38 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
-public class BrokenImagesTest {
+import com.Methods.Base;
+import com.Methods.Method;
+import com.PageObjects.HomePage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestBrokenImages {
 	
+	static WebDriver driver;
+	static String path = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\configfiles\\config.properties";
+	static Base m = new Base();
 
-	public static void main(String[] args) {
+	@BeforeClass
+	public void launch() throws Exception {
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(Method.ReadPropertyFile(path, "testUrl"));
+		driver.findElement(HomePage.BrokenImages).click();
+	}
 
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\Sreen\\OneDrive\\Documents\\QA\\Selenium\\chromedriver_win32\\chromedriver.exe");
-
-		ChromeOptions options = new ChromeOptions();
-
-
-		WebDriver driver = new ChromeDriver(options);
-
-		driver.get("http://the-internet.herokuapp.com/broken_images");
-
+	@AfterClass
+	public void close() {
+		driver.close();
+	}
+	
+	@Test
+	public void TC01() {
 		List<WebElement> images = driver.findElements(By.tagName("img"));
 
 		for (WebElement image : images) {
@@ -48,11 +63,6 @@ public class BrokenImagesTest {
 				e.printStackTrace();
 			}
 		}
-		
-		
-		
-
-		driver.quit();
 	}
 
 }

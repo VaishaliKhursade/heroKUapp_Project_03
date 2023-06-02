@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 public class HomePage {
 	
 	//All links
+	public static By Header = By.xpath("//h1[@class='heading']");
 	public static By ABTesting = By.xpath("//a[text()='A/B Testing']");
 	public static By AddRemoveElements = By.xpath("//a[text()='Add/Remove Elements']");
 	public static By BasicAuth = By.xpath("//a[text()='Basic Auth']");
