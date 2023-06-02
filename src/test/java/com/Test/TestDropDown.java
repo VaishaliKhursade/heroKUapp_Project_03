@@ -1,14 +1,9 @@
 package com.Test;
 
-import java.io.File;
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -16,12 +11,13 @@ import org.testng.annotations.Test;
 
 import com.Methods.Base;
 import com.Methods.Method;
+import com.PageObjects.DragandDrop;
+import com.PageObjects.Dropdown;
 import com.PageObjects.HomePage;
-import com.PageObjects.SecureFileDownload;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class TestSecureFileDownload {
+public class TestDropDown {
 
 	static WebDriver driver;
 	static String path = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\configfiles\\config.properties";
@@ -33,7 +29,7 @@ public class TestSecureFileDownload {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(Method.ReadPropertyFile(path, "testUrl"));
-		driver.findElement(HomePage.SecureFileDownload).click();
+		driver.findElement(HomePage.Dropdown).click();
 	}
 
 	@AfterClass
@@ -42,21 +38,15 @@ public class TestSecureFileDownload {
 	}
 
 	@Test
-	public void TC01() {
-		
-		Alert a = driver.switchTo().alert();
-		a.sendKeys("admin");
-		a.sendKeys("\t");
-		a.sendKeys("admin");
-		a.accept();
-		
-		WebElement downloadButton = driver.findElement(SecureFileDownload.PDFSample);
-		downloadButton.click();
-
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("downloadedFile")));
-		File downloadedFile = new File("path/to/downloaded/file");
-		Assert.assertTrue(downloadedFile.exists(), "File is downloaded successfully.");
+	public void TC01() throws Exception {
+		WebElement select = driver.findElement(Dropdown.Select);
+		Select s = new Select(select);
+		s.selectByIndex(1);
+		String Selected1 = select.getAttribute("value");
+		Assert.assertEquals(Selected1, "1", "Test Failed, desired option not selected");
+		s.selectByIndex(2);
+		String Selected2 = select.getAttribute("value");
+		Assert.assertEquals(Selected2, "2", "Test Failed, desired option not selected");
 
 	}
 
