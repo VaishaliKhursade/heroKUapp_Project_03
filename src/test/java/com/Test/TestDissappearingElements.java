@@ -19,8 +19,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestDissappearingElements {
 
 	static WebDriver driver;
-	static String path = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\configfiles\\config.properties";
-	static Base m = new Base();
+	static String path = "C:\\Users\\vaishali\\git\\com.heroKU\\src\\test\\resources\\configfiles\\config.properties";
 
 	@BeforeClass
 	public void launch() throws Exception {

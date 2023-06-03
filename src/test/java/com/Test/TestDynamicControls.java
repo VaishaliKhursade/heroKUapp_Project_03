@@ -20,9 +20,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestDynamicControls {
 	static WebDriver driver;
-	static String path = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\configfiles\\config.properties";
+	static String path = "C:\\Users\\vaishali\\git\\com.heroKU\\src\\test\\resources\\configfiles\\config.properties";
 	static Base m = new Base();
-	static String dynamicDataPath = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\testdata\\DynamicControls.properties";
+	static String dynamicDataPath = "C:\\Users\\vaishali\\git\\com.heroKU\\src\\test\\resources\\testdata\\DynamicControls.properties";
 
 	@BeforeClass
 	public void launch() throws Exception {

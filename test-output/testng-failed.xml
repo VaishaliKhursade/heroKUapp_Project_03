@@ -3,14 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.Test.TestDynamicLoading">
+      <class name="com.Test.Test_FormAuthentication">
         <methods>
-          <include name="TC02"/>
           <include name="TC01"/>
-          <include name="launch"/>
+          <include name="TC02"/>
           <include name="close"/>
+          <include name="TC03"/>
+          <include name="launch"/>
         </methods>
-      </class> <!-- com.Test.TestDynamicLoading -->
+      </class> <!-- com.Test.Test_FormAuthentication -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -20,9 +20,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestABTesting {
 	static WebDriver driver;
-	static String path = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\configfiles\\config.properties";
+	static String path = "C:\\Users\\vaishali\\git\\com.heroKU\\src\\test\\resources\\configfiles\\config.properties";
 	static Base m = new Base();
-	static String ABTestpath = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\testdata\\ABTest.properties";
+	static String ABTestpath = "C:\\Users\\vaishali\\git\\com.heroKU\\src\\test\\resources\\testdata\\ABTest.properties";
 
 	@BeforeClass
 	public void Launch() throws Exception {

@@ -22,9 +22,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestHomePage {
 
 	static WebDriver driver;
-	static String path = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\configfiles\\config.properties";
+	static String path = "C:\\Users\\vaishali\\git\\com.heroKU\\src\\test\\resources\\configfiles\\config.properties";
 	static Base m = new Base();
-	static String HomePropPath = "C:\\Users\\Sreen\\git\\repository\\herokuapp\\src\\test\\resources\\testdata\\HomePage.properties";
+	static String HomePropPath = "C:\\Users\\vaishali\\git\\com.heroKU\\src\\test\\resources\\testdata\\HomePage.properties";
 
 	@BeforeClass
 	public void Launch() throws Exception {
